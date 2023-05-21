@@ -1,0 +1,271 @@
+<FloatLayout>:
+    Image:
+        source: 'Background.png'
+        size: self.texture_size
+        id: Background
+    Image:
+        source: 'Title.png'
+        size: self.texture_size
+        id: Title
+        pos: 0,250
+   
+
+    # Login Page --------------------
+    Image:
+        source: 'LoginBackground.png'
+        size: self.texture_size
+        id: LoginBackground
+        pos: 0,-70
+    Image:
+        source: 'LoginError.png'
+        size: self.texture_size
+        id: LoginError
+        color: 1,1,1,0
+        pos: 0,-165
+    TextInput:
+        multiline: False
+        id: UsernameInput
+        size_hint: None, None
+        size: 300,36
+        font_name: 'Comfortaa-VariableFont_wght.ttf'
+        font_size: 20
+        background_color: 1,1,1,0
+        cursor_color: 0,0,0,1
+        pos: (363, 307)
+        write_tab: False
+        disabled: False
+    TextInput:
+        multiline: False
+        id: PasswordInput
+        size_hint: None, None
+        size: 300,36
+        font_name: 'Comfortaa-VariableFont_wght.ttf'
+        font_size: 20
+        background_color: 1,1,1,0
+        cursor_color: 0,0,0,1
+        pos: (363, 222)
+        write_tab: False
+        disabled: False
+        password: True
+        password_mask: '-'
+    HoverButton:
+        id: Continue_Button
+        size_hint: None, None
+        size: 150,46
+        border: 1,1,1,1
+        background_disabled_normal: 'Continue.png'
+        background_normal: 'Continue.png'
+        background_down: 'ContinueA.png'
+        pos: (438, 135)
+        on_press: root.ContinuePress()
+
+    
+
+    # ChoosePage ---------------------
+
+    Image:
+        source: 'ChooseBackground.png'
+        size: self.texture_size
+        id: ChooseBackground
+        pos: 750,-70
+    HoverButton:
+        id: OpenSaved_Button
+        size_hint: None, None
+        size: 179,56
+        border: 1,1,1,1
+        background_disabled_normal: 'OpenSaved.png'
+        background_normal: 'OpenSaved.png'
+        background_down: 'OpenSavedA.png'
+        pos: (1172, 355)
+        on_press: root.OpenSavedPress()
+    HoverButton:
+        id: StartNew_Button
+        size_hint: None, None
+        size: 179,56
+        border: 1,1,1,1
+        background_disabled_normal: 'StartNew.png'
+        background_normal: 'StartNew.png'
+        background_down: 'StartNewA.png'
+        pos: (1172, 267)
+        on_press: root.StartNewPress()
+    HoverButton:
+        id: ReturnLogin_Button
+        size_hint: None, None
+        size: 179,56
+        border: 1,1,1,1
+        background_disabled_normal: 'ReturnLogin.png'
+        background_normal: 'ReturnLogin.png'
+        background_down: 'ReturnLoginA.png'
+        pos: (1172, 179)
+        on_press: root.ReturnLoginPress()
+    
+    # RecipeSearchPage ---------------------
+
+    Image:
+        source: 'SearchBackground.png'
+        size: self.texture_size
+        id: SearchBackground
+        pos: 900,-70
+    Image:
+        source: 'NoResult.png'
+        size: self.texture_size
+        id: NoResultError
+        color: 1,1,1,0
+        pos: 103,-100
+    HoverButton:
+        id: ReturnChoose_Button
+        size_hint: None, None
+        size: 101,37
+        border: 1,1,1,1
+        background_disabled_normal: 'ReturnChoose.png'
+        background_normal: 'ReturnChoose.png'
+        background_down: 'ReturnChooseA.png'
+        pos: (1659, 485)
+        on_press: root.ReturnChoosePress()
+    TextInput:
+        multiline: False
+        id: SearchInput
+        size_hint: None, None
+        size: 300,36
+        font_name: 'Comfortaa-VariableFont_wght.ttf'
+        font_size: 20
+        background_color: 1,1,1,0
+        cursor_color: 0,0,0,1
+        pos: (1360, 403)
+        write_tab: False
+        disabled: True
+        on_text_validate: root.StartSearch()
+    TextInput:
+        multiline: False
+        id: HealthInput
+        size_hint: None, None
+        size: 175,31
+        font_name: 'Comfortaa-VariableFont_wght.ttf'
+        font_size: 16
+        background_color: 1,1,1,0
+        cursor_color: 0,0,0,1
+        pos: (1060, 368)
+        write_tab: False
+        disabled: True
+    TextInput:
+        multiline: False
+        id: DietInput
+        size_hint: None, None
+        size: 175,31
+        font_name: 'Comfortaa-VariableFont_wght.ttf'
+        font_size: 16
+        background_color: 1,1,1,0
+        cursor_color: 0,0,0,1
+        pos: (1060, 290)
+        write_tab: False
+        disabled: True
+    TextInput:
+        multiline: False
+        id: MealTypeInput
+        size_hint: None, None
+        size: 175,31
+        font_name: 'Comfortaa-VariableFont_wght.ttf'
+        font_size: 16
+        background_color: 1,1,1,0
+        cursor_color: 0,0,0,1
+        pos: (1060, 212)
+        write_tab: False
+        disabled: True
+    TextInput:
+        multiline: False
+        id: DishTypeInput
+        size_hint: None, None
+        size: 175,31
+        font_name: 'Comfortaa-VariableFont_wght.ttf'
+        font_size: 16
+        background_color: 1,1,1,0
+        cursor_color: 0,0,0,1
+        pos: (1060, 134)
+        write_tab: False
+        disabled: True
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+        size_hint: None, None
+        size: 396,300
+        pos: 1315,80
+        Label:
+            id: RecipeList
+            size_hint: None, None
+            height: 207
+            width: self.parent.width
+            pos: self.parent.pos
+
+    # View Recipe Page ---------------------
+
+    Image:
+        source: 'ViewBackground.png'
+        size: self.texture_size
+        id: ViewBackground
+        pos: 900,-70
+    Image:
+        source: 'SavedMessage.png'
+        size: self.texture_size
+        id: SavedMessage
+        color: 1,1,1,0
+        pos: -230,107
+    Image:
+        source: 'AlreadySaved.png'
+        size: self.texture_size
+        id: AlreadySavedMessage
+        color: 1,1,1,0
+        pos: -230,107
+    HoverButton:
+        id: ReturnSearch_Button
+        size_hint: None, None
+        size: 101,37
+        border: 1,1,1,1
+        background_disabled_normal: 'ReturnChoose.png'
+        background_normal: 'ReturnChoose.png'
+        background_down: 'ReturnChooseA.png'
+        pos: (1593, 485)
+        on_press: root.ReturnSearchPress()
+    HoverButton:
+        id: Save_Button
+        size_hint: None, None
+        size: 101,37
+        border: 1,1,1,1
+        background_disabled_normal: 'SaveRecipe.png'
+        background_normal: 'SaveRecipe.png'
+        background_down: 'SaveRecipeA.png'
+        pos: (1130, 485)
+        on_press: root.SavePress()
+
+    # Saved Recipe Page
+
+    Image:
+        source: 'SavedBackground.png'
+        size: self.texture_size
+        id: SavedBackground
+        pos: 900,-70
+    HoverButton:
+        id: ReturnChoose2_Button
+        size_hint: None, None
+        size: 101,37
+        border: 1,1,1,1
+        background_disabled_normal: 'ReturnChoose.png'
+        background_normal: 'ReturnChoose.png'
+        background_down: 'ReturnChooseA.png'
+        pos: (1663, 485)
+        on_press: root.ReturnChoosePress2()
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+        scroll_type: ['bars']
+        bar_color: 0.3,0.6,0,1
+        bar_width: 4
+        size_hint: None, None
+        size: 150,450
+        pos: 1045,70
+        Label:
+            id: SavedList
+            size_hint: None, None
+            height: 45
+            width: self.parent.width
+            pos: self.parent.pos
+            
