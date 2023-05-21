@@ -1,6 +1,9 @@
 # food_for_you
 A python, kivy and sqlite frontend for the Edamam api
 
+### Warning!
+This is an old highschool project, code is probably not written very well, I will hopefully update the quality of the code in the future.
+
 ### Installation:
 - Download the repo, and keep everything saved in the same folder
 - Install Python
