@@ -1,5 +1,5 @@
 # food_for_you
-A python, kivy and sqlite frontend for the Edamam api
+A python, kivy and sqlite frontend for the Edamam api.
 
 ### Warning!
 This is an old highschool project, code is probably not written very well, I will hopefully update the quality of the code in the future.
@@ -14,6 +14,12 @@ $ pip install kivy
 - On line 418 and 419 in main.py, add your Edamam app id and key
 
 ### Running and Use:
+To run the application, cd into the directory and enter:
+```
+$ python3 main.py
+```
+Your system may use python instead of python3 depending on how your system has installed python.
+
 Two test accounts have been set up in the db.
 
 Username: test_user1 <br />
